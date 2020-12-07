@@ -9,31 +9,11 @@ function Main(props) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    api
-      .getUserInfo()
-      .then((res) => {
-        setUserName(res.name);
-        setUserDescription(res.about);
-        setUserAvatar(res.avatar);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  useEffect(() => {
-    api
-      .getInitialCards()
-      .then((res) => {
-        const card = res.map((data) => {
-          return {
-            like: data.likes.length,
-            name: data.name,
-            src: data.link,
-            id: data._id,
-          };
-        });
-        console.log(card);
+    Promise.all([api.getUserInfo(), api.getInitialCards()])
+      .then(([info, card]) => {
+        setUserName(info.name);
+        setUserDescription(info.about);
+        setUserAvatar(info.avatar);
         setCards(card);
       })
       .catch((err) => {
@@ -76,10 +56,10 @@ function Main(props) {
           {cards.map((data) => {
             return (
               <Card
-                like={data.like}
+                like={data.likes.length}
                 name={data.name}
-                src={data.src}
-                key={data.id}
+                src={data.link}
+                key={data._id}
                 onCardClick={props.onCardClick}
               />
             );

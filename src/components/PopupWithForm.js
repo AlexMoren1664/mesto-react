@@ -3,7 +3,7 @@ function PopupWithForm(props) {
       <>
         <div
           className={`popup popup_type_${props.name} ${
-            props.isOpen ? "popup_open" : ""
+            props.isOpen && "popup_open"
           }`}
         >
           <form

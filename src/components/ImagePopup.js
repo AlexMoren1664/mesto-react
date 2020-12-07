@@ -1,10 +1,9 @@
 function ImagePopup(props) {
-    console.log(props.card);
     return (
       <>
         <div
           className={`popup popup_type_${props.name} ${
-            props.card ? "popup_open" : ""
+            props.card.src  && "popup_open"
           }`}
         >
           <div className="popup__content">
