@@ -18,9 +18,7 @@ function EditAvatarPopup(props) {
       isOpen={props.isOpen}
       onClose={props.onClose}
       name="avatar"
-      title="Обновить аватар"
-      children={
-        <>
+      title="Обновить аватар" >
           <input
             id="avatar-input"
             name="link"
@@ -32,9 +30,7 @@ function EditAvatarPopup(props) {
             ref={inputRef}
           />
           <span className="popup__error" id="link-error" />
-        </>
-      }
-    />
+    </PopupWithForm>
   );
 }
 export default EditAvatarPopup;

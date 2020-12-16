@@ -6,7 +6,7 @@ import Main from "./Main";
 import ImagePopup from "./ImagePopup";
 import { useState, useEffect } from "react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
-import api from "../utils/Api.js";
+import api from "../utils/api.js";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
@@ -87,7 +87,6 @@ function App() {
       .then((res) => {
         setCurrentUser(res);
         closeAllPopups();
-        console.log(res);
       })
       .catch((err) => {
         console.log(err);

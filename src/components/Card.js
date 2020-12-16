@@ -4,7 +4,7 @@ import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 function Card({
   src,
   name,
-  like,
+  likes,
   onCardClick,
   card,
   onCardLike,
@@ -54,7 +54,7 @@ function Card({
             className={cardLikeButtonClassName}
             onClick={handleLikeClick}
           />
-          <div className="card__counter">{like.length}</div>
+          <div className="card__counter">{likes.length}</div>
         </div>
       </div>
     </li>

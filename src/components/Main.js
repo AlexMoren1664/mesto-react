@@ -40,7 +40,7 @@ function Main(props) {
           {props.cards.map((data) => {
             return (
               <Card
-                like={data.likes}
+                likes={data.likes}
                 name={data.name}
                 src={data.link}
                 key={data._id}

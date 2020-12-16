@@ -35,9 +35,7 @@ function EditProfilePopup(props) {
       isOpen={props.isOpen}
       onClose={props.onClose}
       name="edit"
-      title="Редактировать профиль"
-      children={
-        <>
+      title="Редактировать профиль" >
           <input
             value={props.name}
             onChange={handleChangeName}
@@ -66,9 +64,7 @@ function EditProfilePopup(props) {
             autoComplete="off"
           />
           <span className="popup__error" id="about-error" />
-        </>
-      }
-    />
+   </PopupWithForm>
   );
 }
 export default EditProfilePopup;
